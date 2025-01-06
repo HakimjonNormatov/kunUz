@@ -35,7 +35,7 @@ public class RegionService {
     public Result update(Long id , RegionDto regionDto){
         Optional<Region> byId = regionRepo.findById(id);
         if (byId.isPresent()){
-            Region region = new Region();
+            Region region = byId.get();
             region.setOrderNumber(regionDto.getOrderNumber());
             region.setName_uz(regionDto.getName_uz());
             region.setName_ru(regionDto.getName_ru());
